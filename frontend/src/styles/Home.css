@@ -1,0 +1,423 @@
+/* Home.css - Blackish Metallic Theme */
+
+.home-container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #2a2a2a 100%);
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  }
+  
+  .main-content {
+    padding: 80px 20px 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    min-height: calc(100vh - 120px);
+  }
+  
+  /* Left Panel Styles */
+  .left-panel {
+    padding: 40px 0;
+  }
+  
+  .welcome-section {
+    margin-bottom: 60px;
+  }
+  
+  .main-heading {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 50%, #808080 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .highlight-text {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #f39c12 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .description {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: #b0b0b0;
+    margin-bottom: 40px;
+    max-width: 500px;
+  }
+  
+  .meeting-input-section {
+    margin-bottom: 40px;
+  }
+  
+  .input-group {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: stretch;
+  }
+  
+  /* Material-UI TextField Overrides */
+  .meeting-input .MuiOutlinedInput-root {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(192, 192, 192, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  .meeting-input .MuiOutlinedInput-root:hover {
+    border-color: rgba(192, 192, 192, 0.4);
+    background: rgba(255, 255, 255, 0.08);
+  }
+  
+  .meeting-input .MuiOutlinedInput-root.Mui-focused {
+    border-color: #ffd700;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+  }
+  
+  .meeting-input .MuiOutlinedInput-input {
+    color: #ffffff;
+    font-size: 1.1rem;
+    padding: 16px 20px;
+  }
+  
+  .meeting-input .MuiOutlinedInput-input::placeholder {
+    color: #888888;
+    opacity: 1;
+  }
+  
+  .meeting-input .MuiOutlinedInput-notchedOutline {
+    border: none;
+  }
+  
+  /* Custom Buttons */
+  .join-btn {
+    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #f39c12 100%) !important;
+    color: #000000 !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+    padding: 16px 32px !important;
+    border-radius: 12px !important;
+    text-transform: none !important;
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+    min-width: 140px;
+  }
+  
+  .join-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 30px rgba(255, 215, 0, 0.4) !important;
+  }
+  
+  .join-btn:disabled {
+    background: rgba(128, 128, 128, 0.3) !important;
+    color: rgba(255, 255, 255, 0.4) !important;
+    box-shadow: none !important;
+    transform: none !important;
+  }
+  
+  .action-buttons {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  
+  .generate-btn,
+  .history-link-btn {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: #e0e0e0 !important;
+    border: 1px solid rgba(192, 192, 192, 0.2) !important;
+    padding: 12px 24px !important;
+    border-radius: 10px !important;
+    text-transform: none !important;
+    font-weight: 500 !important;
+    backdrop-filter: blur(10px) !important;
+    transition: all 0.3s ease !important;
+  }
+  
+  .generate-btn:hover,
+  .history-link-btn:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(192, 192, 192, 0.4) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1) !important;
+  }
+  
+  /* Feature Cards */
+  .feature-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-top: 40px;
+  }
+  
+  .feature-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(192, 192, 192, 0.1);
+    border-radius: 16px;
+    padding: 32px 24px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+  }
+  
+  .feature-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    border-color: rgba(192, 192, 192, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+  }
+  
+  .feature-icon {
+    font-size: 3rem !important;
+    color: #ffd700;
+    margin-bottom: 16px;
+  }
+  
+  .feature-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #ffffff;
+  }
+  
+  .feature-card p {
+    color: #b0b0b0;
+    line-height: 1.5;
+    font-size: 0.95rem;
+  }
+  
+  /* Right Panel - Visual Container */
+  .right-panel {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+  }
+  
+  .visual-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    height: 500px;
+  }
+  
+  .connection-visual {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    margin-bottom: 40px;
+  }
+  
+  .user-node {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #333333 0%, #555555 50%, #777777 100%);
+    border: 3px solid #ffd700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+  }
+  
+  .node-1 {
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .node-2 {
+    bottom: 80px;
+    left: 20%;
+    animation: float 3s ease-in-out infinite 1s;
+  }
+  
+  .node-3 {
+    bottom: 80px;
+    right: 20%;
+    animation: float 3s ease-in-out infinite 2s;
+  }
+  
+  .avatar {
+    font-size: 2rem;
+  }
+  
+  .pulse-ring {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  
+  .connection-lines {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  
+  .line {
+    position: absolute;
+    background: linear-gradient(90deg, transparent, #ffd700, transparent);
+    height: 2px;
+    animation: flow 2s infinite;
+  }
+  
+  .line-1 {
+    top: 35%;
+    left: 45%;
+    width: 25%;
+    transform: rotate(45deg);
+    animation-delay: 0s;
+  }
+  
+  .line-2 {
+    bottom: 30%;
+    left: 25%;
+    width: 30%;
+    transform: rotate(-30deg);
+    animation-delay: 0.7s;
+  }
+  
+  .line-3 {
+    bottom: 30%;
+    right: 25%;
+    width: 30%;
+    transform: rotate(30deg);
+    animation-delay: 1.4s;
+  }
+  
+  .tagline-box {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(192, 192, 192, 0.2);
+    border-radius: 16px;
+    padding: 32px;
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+  
+  .tagline-box h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    background: linear-gradient(135deg, #ffffff 0%, #c0c0c0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .tagline-box p {
+    color: #b0b0b0;
+    font-size: 1.1rem;
+    line-height: 1.5;
+  }
+  
+  /* Animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 0.8; }
+  }
+  
+  @keyframes flow {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 1024px) {
+    .content-wrapper {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+    
+    .main-heading {
+      font-size: 2.8rem;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .main-content {
+      padding: 60px 16px 20px;
+    }
+    
+    .main-heading {
+      font-size: 2.2rem;
+    }
+    
+    .input-group {
+      flex-direction: column;
+      gap: 12px;
+    }
+    
+    .action-buttons {
+      justify-content: center;
+    }
+    
+    .feature-cards {
+      grid-template-columns: 1fr;
+    }
+    
+    .visual-container {
+      height: 350px;
+    }
+    
+    .connection-visual {
+      height: 280px;
+    }
+    
+    .user-node {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .avatar {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .main-heading {
+      font-size: 1.8rem;
+    }
+    
+    .description {
+      font-size: 1rem;
+    }
+    
+    .tagline-box h3 {
+      font-size: 1.4rem;
+    }
+    
+    .tagline-box p {
+      font-size: 1rem;
+    }
+  }

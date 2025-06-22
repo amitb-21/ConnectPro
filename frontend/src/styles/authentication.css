@@ -1,0 +1,306 @@
+
+
+.auth-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    max-width: 420px;
+    padding: 2.5rem;
+    background: rgba(10, 10, 10, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4),
+      0 10px 10px -5px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    z-index: 1000;
+    animation: modalFadeIn 0.3s ease-out;
+  }
+  
+  @keyframes modalFadeIn {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  
+  .auth-container h2 {
+    font-size: 1.875rem;
+    font-weight: 700;
+    color: #f9fafb;
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: -0.025em;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  
+  .auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .auth-form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .auth-form input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    font-size: 0.95rem;
+    color: #f9fafb;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    outline: none;
+    transition: all 0.2s ease;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 400;
+  }
+  
+  .auth-form input::placeholder {
+    color: #9ca3af;
+    opacity: 1;
+  }
+  
+  .auth-form input:focus {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.05),
+      0 0 20px rgba(255, 255, 255, 0.1);
+  }
+  
+  .auth-form input:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .error {
+    color: #fca5a5;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin-top: 0.25rem;
+    text-shadow: 0 0 10px rgba(252, 165, 165, 0.3);
+  }
+  
+  .auth-form button[type="submit"] {
+    width: 100%;
+    padding: 0.875rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #f9fafb;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  .auth-form button[type="submit"]:hover {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .auth-form button[type="submit"]:active {
+    transform: translateY(0);
+  }
+  
+  .google-btn {
+    width: 100%;
+    padding: 0.875rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #e5e7eb;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 1.5rem;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  .google-btn:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.25);
+    color: #f9fafb;
+    transform: translateY(-1px);
+  }
+  
+  .switch-btn {
+    background: none;
+    border: none;
+    color: #d1d5db;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: all 0.2s ease;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  .switch-btn:hover {
+    color: #f9fafb;
+    text-decoration-color: rgba(255, 255, 255, 0.5);
+  }
+  
+  .auth-container > div:last-child {
+    text-align: center;
+    color: #9ca3af;
+    font-size: 0.95rem;
+    font-weight: 400;
+  }
+  
+  .auth-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 16px;
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.02) 0%,
+      rgba(255, 255, 255, 0.01) 50%,
+      rgba(255, 255, 255, 0.02) 100%
+    );
+    pointer-events: none;
+    z-index: -1;
+  }
+  
+  @media (max-width: 480px) {
+    .auth-container {
+      max-width: 350px;
+      padding: 2rem;
+      margin: 1rem;
+      width: calc(100% - 2rem);
+    }
+  
+    .auth-container h2 {
+      font-size: 1.625rem;
+      margin-bottom: 1.5rem;
+    }
+  
+    .auth-form {
+      gap: 1rem;
+    }
+  
+    .auth-form input,
+    .auth-form button[type="submit"],
+    .google-btn {
+      padding: 0.75rem;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .auth-container {
+      max-width: 320px;
+      padding: 1.5rem;
+      margin: 0.75rem;
+    }
+  
+    .auth-container h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+  
+    .auth-form {
+      gap: 0.875rem;
+    }
+  
+    .auth-form input,
+    .auth-form button[type="submit"],
+    .google-btn {
+      padding: 0.625rem;
+      font-size: 0.9rem;
+    }
+  
+    .auth-form input {
+      font-size: 0.875rem;
+    }
+  
+    .auth-container > div:last-child {
+      font-size: 0.875rem;
+    }
+  
+    .switch-btn {
+      font-size: 0.875rem;
+    }
+  }
+  
+  @media (max-width: 320px) {
+    .auth-container {
+      max-width: 290px;
+      padding: 1.25rem;
+      margin: 0.5rem;
+    }
+  
+    .auth-container h2 {
+      font-size: 1.375rem;
+      margin-bottom: 1rem;
+    }
+  
+    .auth-form {
+      gap: 0.75rem;
+    }
+  
+    .auth-form input,
+    .auth-form button[type="submit"],
+    .google-btn {
+      padding: 0.5rem;
+      font-size: 0.85rem;
+    }
+  
+    .auth-form input {
+      font-size: 0.825rem;
+    }
+  
+    .auth-container > div:last-child {
+      font-size: 0.825rem;
+      line-height: 1.4;
+    }
+  
+    .switch-btn {
+      font-size: 0.825rem;
+    }
+  
+    .error {
+      font-size: 0.8rem;
+    }
+  }
+  
+  .auth-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2px);
+    z-index: 999;
+    animation: overlayFadeIn 0.2s ease-out;
+  }
+  
+  @keyframes overlayFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
