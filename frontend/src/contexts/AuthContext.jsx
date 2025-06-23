@@ -58,7 +58,6 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  // Update endpoints to match backend
   const getHistoryOfUser = async () => {
     try {
       const res = await axios.get(`${API_URL}/auth/user/get_all_activity`, {

@@ -27,10 +27,6 @@ export const connectToSocket = (server) => {
 
             timeOnline[socket.id] = new Date();
 
-            // connections[path].forEach(elem => {
-            //     io.to(elem)
-            // })
-
             for (let a = 0; a < connections[path].length; a++) {
                 io.to(connections[path][a]).emit("user-joined", socket.id, connections[path])
             }
@@ -96,10 +92,8 @@ export const connectToSocket = (server) => {
 
                         connections[key].splice(index, 1)
 
-                        // Clean up messages when room becomes empty
                         if (connections[key].length === 0) {
                             delete connections[key];
-                            // Delete messages for this room as well
                             if (messages[key] !== undefined) {
                                 delete messages[key];
                                 console.log(`Messages deleted for room: ${key}`);
@@ -107,15 +101,9 @@ export const connectToSocket = (server) => {
                         }
                     }
                 }
-
             }
-
-            // Clean up timeOnline for this socket
             delete timeOnline[socket.id];
-
         })
-
     })
-
     return io;
 }
