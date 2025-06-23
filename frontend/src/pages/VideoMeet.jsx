@@ -548,6 +548,18 @@ const VideoMeetComponent = () => {
       previewStream.getTracks().forEach((track) => track.stop());
     }
 
+    // Disconnect from socket server and clean up connections
+    if (socketRef.current) {
+      socketRef.current.disconnect();
+    }
+    for (let id in connections) {
+      if (connections[id]) {
+        connections[id].close();
+        delete connections[id];
+      }
+    }
+
+    // Navigate to home
     navigate("/home", { replace: true });
   };
 
