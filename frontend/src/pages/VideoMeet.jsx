@@ -26,6 +26,7 @@ const VideoMeetComponent = () => {
   var socketRef = useRef();
   let socketIdRef = useRef();
   let localVideoref = useRef();
+  const navigate = useNavigate();
 
   let [videoAvailable, setVideoAvailable] = useState(true);
   let [audioAvailable, setAudioAvailable] = useState(true);
@@ -547,25 +548,12 @@ const VideoMeetComponent = () => {
       previewStream.getTracks().forEach((track) => track.stop());
     }
 
-    if (socketRef.current) {
-      socketRef.current.disconnect();
-    }
-
-    Object.keys(connections).forEach(id => {
-      if (connections[id]) {
-        connections[id].close();
-        delete connections[id];
-      }
-    });
-    navigate("/home", { replace: true });
-  };
-
     navigate("/home", { replace: true });
   };
 
   let openChat = () => {
     setModal(true);
-
+    // newMessages will be reset by the useEffect when showModal changes
   };
 
   let closeChat = () => {
