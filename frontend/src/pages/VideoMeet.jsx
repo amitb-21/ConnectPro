@@ -13,7 +13,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import styles from "../styles/VideoMeet.module.css";
 import withAuth from "../utils/withAuth";
 
-const server_url = "http://localhost:5000";
+const server_url = import.meta.env.VITE_API_URL;
 
 var connections = {};
 
