@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import io from "socket.io-client";
+import { useNavigate } from "react-router-dom";
 import { Badge, IconButton } from "@mui/material";
 import VideocamIcon from "@mui/icons-material/Videocam";
 import VideocamOffIcon from "@mui/icons-material/VideocamOff";
@@ -546,7 +547,7 @@ const VideoMeetComponent = () => {
       previewStream.getTracks().forEach((track) => track.stop());
     }
 
-    window.location.href = "/home";
+    navigate("/home", { replace: true });
   };
 
   let openChat = () => {
